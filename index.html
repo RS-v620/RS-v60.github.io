@@ -7,6 +7,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         .terminal-theme {
             background-color: #1a1a1a;
             color: #00b3ff;
@@ -79,6 +82,51 @@
         .float-element {
             animation: float 3s ease-in-out infinite;
         }
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                left: 50%;
+                trafnsform: translateX(-50%);
+            }
+
+            .school-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -90,7 +138,7 @@
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <div class="text-green-500 font-mono text-xl">
-                    <span class="typing-text">&gt; Your_Name.init()</span>
+                    <span class="typing-text">&gt; Rishi_Sharma.init()</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-green-500 hover:text-green-400 transition-colors duration-300">/about</a>
@@ -103,8 +151,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative pt-16">
+    <section id="about" class="min-h-screen flex items-center justify-center relative pt-16">
         <div class="container mx-auto px-6 relative z-10">
+            <section class="profile-section">
+                <img src="Passport_Photo.jpg" alt="Your Name" class="profile-image">
+                <div class="profile-info">
+                    <h1>Rishi Sharma</h1>
+                    <p>BE ECE</p>
+                    <p>UIET-Panjab University, 2020-2024</p>
+                </div>
+            </section>
             <div class="terminal-theme p-8 rounded-lg shadow-2xl border border-green-500">
                 <div class="mb-4 flex items-center">
                     <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
@@ -112,13 +168,14 @@
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
                 <div class="space-y-4">
-                    <p class="typing-effect">&gt; const developer = new EmbeddedEngineer();</p>
+                    <p class="typing-effect">&gt; const developer = new Engineer();</p>
                     <p class="typing-effect">&gt; developer.specialization = ["Embedded_Systems", "Computer_Vision"];</p>
-                    <p class="typing-effect">&gt; developer.experience = 5; // Years in tech</p>
+                    <p class="typing-effect">&gt; developer.experience = 1; // Year in tech</p>
                     <p class="typing-effect">&gt; developer.status = "Open to opportunities";</p>
                     <p class="typing-effect">&gt; developer.init();</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -131,6 +188,24 @@
                 <div class="bg-gray-800 p-6 rounded-lg border border-green-500 hover:border-green-400 transition-all duration-300">
                     <h3 class="text-xl font-bold mb-6 text-green-400">Embedded Systems</h3>
                     <div class="space-y-6">
+                        <div class="skill-container" data-skill="C/C++" data-level="90">
+                            <div class="flex justify-between mb-2">
+                                <span>C/C++</span>
+                                <span class="text-green-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-container" data-skill="C/C++" data-level="90">
+                            <div class="flex justify-between mb-2">
+                                <span>C/C++</span>
+                                <span class="text-green-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
                         <div class="skill-container" data-skill="C/C++" data-level="90">
                             <div class="flex justify-between mb-2">
                                 <span>C/C++</span>
@@ -170,6 +245,42 @@
             <h2 class="text-3xl font-bold mb-12 text-green-500 text-center">&lt;Featured_Projects&gt;</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card Template -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/250" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 right-0 bg-green-500 text-black px-3 py-1 text-sm font-mono">
+                            Real-time
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-green-400">Object Detection System</h3>
+                        <p class="text-gray-400 mb-4">Embedded real-time object detection using OpenCV and TensorFlow Lite</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">C++</span>
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">OpenCV</span>
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="relative">
+                        <img src="/api/placeholder/400/250" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 right-0 bg-green-500 text-black px-3 py-1 text-sm font-mono">
+                            Real-time
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-green-400">Object Detection System</h3>
+                        <p class="text-gray-400 mb-4">Embedded real-time object detection using OpenCV and TensorFlow Lite</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">C++</span>
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">OpenCV</span>
+                            <span class="px-2 py-1 bg-gray-700 text-green-400 rounded text-sm font-mono">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300">
                     <div class="relative">
                         <img src="/api/placeholder/400/250" alt="Project 1" class="w-full h-48 object-cover">
@@ -232,6 +343,8 @@
         drops[i] = 1;
     }
 
+    
+
     function drawMatrix() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -268,12 +381,51 @@
     });
 
     // Typing effect
-    function typeWriter(element, text, i = 0) {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            setTimeout(() => typeWriter(element, text, i + 1), 50);
+    function typeWriter(element, text, speed = 50) {
+        element.textContent = '';  // Clear existing content
+        let index = 0;
+        
+        function type() {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, speed);
+            }
         }
+
+        type();
     }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        setInterval(drawMatrix, 50);
+        animateSkills();
+        const elements = document.querySelectorAll('.typing-effect');
+        let initialLoad = true; // Flag to handle the first load
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (initialLoad) {
+                        // For the first load, we just set the flag to false
+                        initialLoad = false;
+                    } else if (!entry.target.hasAttribute('data-animated')) {
+                        // Trigger animation only if it's not the initial load and the element hasn't been animated
+                        const text = entry.target.getAttribute('data-text');
+                        typeWriter(entry.target, text);
+                        entry.target.setAttribute('data-animated', 'true');
+                    }
+                } else {
+                    // Reset animation attribute when out of view to allow retriggering
+                    entry.target.removeAttribute('data-animated');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elements.forEach(element => {
+            element.setAttribute('data-text', element.textContent.trim());
+            observer.observe(element);
+        });
+    });
 
     // Skill bar animation
     function animateSkills() {
@@ -287,18 +439,6 @@
         });
     }
 
-    // Initialize animations
-    document.addEventListener('DOMContentLoaded', () => {
-        setInterval(drawMatrix, 50);
-        animateSkills();
-        
-        // Typing effect for terminal
-        document.querySelectorAll('.typing-effect').forEach(element => {
-            const text = element.textContent;
-            element.textContent = '';
-            typeWriter(element, text);
-        });
-    });
 
     // Particle effect on hover
     function createParticle(x, y) {

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #10B981;
+            --bg-dark: #1F2937;
+            --text-light: #E5E7EB;
+        }
+
+        body {
+            background-color: #111827;
+            color: var(--text-light);
+            font-family: 'Monaco', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .project-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--primary-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1rem;
+        }
+
+        .project-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: black;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .project-details.expanded {
+            max-height: 500px;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 100px;
+            top: 0;
+            bottom: -2rem;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .school-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .school-info {
+            flex: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 3rem 0;
+        }
+
+        .expand-button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .school-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <img src="your-image-url.jpg" alt="Your Name" class="profile-image">
+            <div class="profile-info">
+                <h1>Your Name</h1>
+                <p>Embedded Systems Engineer</p>
+                <p>5+ years of experience in embedded systems and computer vision</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <h2 class="section-title">&lt;Projects_And_Experience&gt;</h2>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div style="position: relative;">
+                    <img src="project1-image.jpg" alt="Project 1" class="project-image">
+                    <span class="project-type">Real-time</span>
+                </div>
+                <div class="project-content">
+                    <h3>Object Detection System</h3>
+                    <p>Embedded real-time object detection using OpenCV and TensorFlow Lite</p>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">TensorFlow</span>
+                    </div>
+                    <div class="project-details" id="project1-details">
+                        <p>Led the development of a real-time object detection system capable of processing 30 FPS on embedded hardware. Implemented optimized ML models and achieved 95% accuracy in target identification.</p>
+                    </div>
+                    <button class="expand-button" onclick="toggleProject('project1-details', this)">
+                        Show More ▼
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div style="position: relative;">
+                    <img src="project2-image.jpg" alt="Project 2" class="project-image">
+                    <span class="project-type">Robotics</span>
+                </div>
+                <div class="project-content">
+                    <h3>Autonomous Navigation System</h3>
+                    <p>Developed navigation algorithms for autonomous robots</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ROS</span>
+                        <span class="tag">SLAM</span>
+                    </div>
+                    <div class="project-details" id="project2-details">
+                        <p>Created a robust navigation system using SLAM algorithms and sensor fusion. Implemented path planning and obstacle avoidance features that reduced collision incidents by 85%.</p>
+                    </div>
+                    <button class="expand-button" onclick="toggleProject('project2-details', this)">
+                        Show More ▼
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <h2 class="section-title">&lt;Education&gt;</h2>
+        <div class="education-timeline">
+            <!-- Education Item 1 -->
+            <div class="timeline-item">
+                <img src="university1-image.jpg" alt="Technical University" class="school-image">
+                <div class="school-info">
+                    <h3>Technical University</h3>
+                    <p>Master of Science in Embedded Systems</p>
+                    <p>2020-2022</p>
+                    <p>GPA: 3.95/4.0</p>
+                </div>
+            </div>
+
+            <!-- Education Item 2 -->
+            <div class="timeline-item">
+                <img src="university2-image.jpg" alt="Engineering College" class="school-image">
+                <div class="school-info">
+                    <h3>Engineering College</h3>
+                    <p>Bachelor of Engineering</p>
+                    <p>2016-2020</p>
+                    <p>GPA: 3.88/4.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleProject(detailsId, button) {
+            const details = document.getElementById(detailsId);
+            details.classList.toggle('expanded');
+            button.textContent = details.classList.contains('expanded') ? 'Show Less ▲' : 'Show More ▼';
+        }
+    </script>
+</body>
+</html>

@@ -57,6 +57,7 @@
     
     code,
     .mono {
+      color: var(--accent-color);
       font-family: 'JetBrains Mono', monospace;
     }
     
@@ -96,6 +97,7 @@
     .nav-links {
       display: flex;
       gap: 2rem;
+      margin-right:5vw;
     }
     
     .nav-link {
@@ -498,9 +500,9 @@
 
     <nav class="nav">
         <div class="nav-content">
-            <div class="mono">> Rishi_Sharma, BE E.C.E (9.24/10)</div>
+            <div class="mono">> Rishi_Sharma, BE E.C.E (9.24/10)🥇, GATE-DA (2024)</div>
             <div class="nav-links">
-                <a href="#about" class="nav-link">Abouts</a>
+                <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
@@ -517,58 +519,55 @@
                     & <span class="hero-accent">Embedded Systems Developer</span>
                 </h1>
                 <div class="terminal">
-                    <div class="terminal-line">
-                        <span class="prompt">$</span> whoami
-                    </div>
-                    <div class="terminal-line">
-                        → Computer Vision Engineer specializing in real-time processing
-                    </div>
-                    <div class="terminal-line">
-                        → Embedded Systems Developer with focus on edge AI deployment
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">$</span> skills --top
-                    </div>
-                    <div class="terminal-line">
-                      ['OpenCV', 'PyTorch', 'Microcontrollers', 'PCB Design', 'C++', 'Python']
-                    </div>
-                </div>
+                  <div class="terminal-line">
+                      <span class="prompt">$</span> whoami
+                  </div>
+                  <div class="terminal-line">
+                      → Software Engineer with a focus on AI and Systems Development
+                  </div>
+                  <div class="terminal-line">
+                      → Embedded & Machine Learning Enthusiast, bridging hardware and AI
+                  </div>
+                  <div class="terminal-line">
+                      <span class="prompt">$</span> skills --top
+                  </div>
+                  <div class="terminal-line">
+                      ['Python', 'C++', 'Embedded Systems', 'Machine Learning', 'Node.js']
+                  </div>
+              </div>
             </div>
         </section>
 
         <section id="skills" class="section">
           <h2 class="section-title">Technical Expertise</h2>
           <div class="skills-grid">
-              <div class="skill-category">
-                  <h3 class="skill-title">Computer Vision</h3>
-                  <ul class="skill-list">
-                      <li>OpenCV for Custom Vision Pipelines</li>
-                      <li>Transfer Learning and Deployment of Deep Learning models</li>
-                      <li>Real-time Video Processing</li>
-                      <li>Custom Dataset Creation & Annotation</li>
-                      <li>Model Optimization & Quantization</li>
-                  </ul>
-              </div>
+            <div class="skill-category">
+              <h3 class="skill-title">Software Engineering</h3>
+              <ul class="skill-list">
+                <li>Backend Development with Flask & FastAPI</li>
+                <li>AI-Powered System Design & Integration</li>
+                <li>Deep Learning Model Development, Retraining, and Deployment</li>
+                <li>Custom Dataset Engineering & Annotation</li>
+                <li>Performance Tuning & Hardware Acceleration</li>
+                <li>Experience with Node.js for Backend Services</li>
+            </ul>
+          </div>
 
               <div class="skill-category">
                   <h3 class="skill-title">Embedded Systems</h3>
                   <ul class="skill-list">
-                      <li>ARM Architecture Based Microcontroller Development</li>
+                      <li>ARM Architecture Based Micro-controller Development</li>
                       <li>Bare-metal Programming</li>
-                      <li>Creating and Handling C/C++ WebServers</li>
-                      <li>Hardware Interfacing (I2C, SPI, UART)</li>
-                      <li>PCB Layout and Design Using KiCAD/ Altium™</li>
-                      <li>Basic electronics skills</li>
+                      <li>PCB Layout and Design Using KiCAD™</li>
                   </ul>
               </div>
 
               <div class="skill-category">
                   <h3 class="skill-title">Domain Independent</h3>
                   <ul class="skill-list">
-                      <li>VS Code, Visual Studio 2022, Git/Github, CCStudio, Arduino</li>
-                      <li>Network Management with LibreNMS</li>
-                      <li>Containerisation with Docker</li>
-                      <li>CMAKE and Pyinstaller for platform independant software</li>
+                      <li>VS Code, Visual Studio 2022, Git/Github, CCStudio</li>
+                      <li>Containerization with Docker</li>
+                      <li>CMAKE and PyInstaller for platform independent software</li>
                       <li>Intermediate 3D Modeling and animation</li>
                   </ul>
               </div>
@@ -579,15 +578,15 @@
         <h2 class="section-title">Professional Experience</h2>
         <div class="experience-grid">
             <div class="experience-item">
-                <h3 class="company">Fleetsafe India Pvt. Ltd.</h3>
+                <h3 class="company">FleetSafe India Pvt. Ltd.</h3>
                 <p class="position">Engineer (Embedded and CV)</p>
                 <p class="duration">Jan 2024 - Present</p>
                 <ul class="achievements">
-                  <li>Developed software for Licenseplate reading at mine locations with inference time of 0.3s on Intel i5 processor and 5s on embedded linux based iMX8 processor</li>
-                    <!-- <li>Developed real-time object detector and reader for finding Licenseplates in Video Streams on edge devices. Integrated it with a Server side managemnet software.</li> -->
-                    <li>Created firmware for Texas Instruments™ Microcontrollers interfacing sensors,implementing embedded webserver and handling file transfers</li>
+                  <li>Developed software for License-plate reading on edge for mine locations with inference time of 0.3s on Intel i5 processor and 5s on embedded linux based iMX8 processor</li>
+                    <!-- <li>Developed real-time object detector and reader for finding License-plates in Video Streams on edge devices. Integrated it with a Server side management software.</li> -->
+                    <li>Created firmware for Texas Instruments™ Micro-controllers interfacing sensors,implementing embedded webserver and handling file transfers</li>
                     <li>Worked in team of 2 to design and test PCBs using Altium™'s CAD Tools.</li>
-                    <li>Managed a team of 5 Site-Reliability Professionals, coordinating assignemnts and handling operations</li>
+                    <li>Managed a team of 5 Site-Reliability Professionals, coordinating assignments and handling operations</li>
                 </ul>
                 <div class="project-tags">
                   <span class="tag">C\C++</span>
@@ -607,8 +606,8 @@
                 <p class="duration">Aug 2021 - Dec 2023</p>
                 <ul class="achievements">
                     <li>Worked on multiple projects with several ME-PhD students focusing on electronics and AI on edge</li>
-                    <li>Created schematics, PCBs , designed firmware and assembled electronic devices utilizing fundamental electronics skills</li>
-                    <li>Presented projects and organied meetups with Industry profesionals to promote the projects</li>
+                    <li>Created schematics, PCBs , designed firmware and assembled electronic devices</li>
+                    <li>Presented projects and organized meetups with Industry professionals to promote the projects</li>
                 </ul>
                 <div class="project-tags">
                   <span class="tag">C++</span>
@@ -625,16 +624,16 @@
 
         <section id="projects" class="section">
             <h2 class="section-title">Projects</h2>
-            <h4 class="note">( I was not able to obtain permission to display project demos under direction of DIC )</h4>
+            <h4 class="note">( I was not able to obtain permission to display project demos from DIC )</h4>
             <div class="projects-grid">
 
                 <article class="project-card">
                     <!-- <div class="project-image"></div> -->
                     <div class="project-content">
-                        <h3 class="project-title">Automated Mechanical Fastner Sorting </h3>
+                        <h3 class="project-title">Automated Mechanical Fastener Sorting </h3>
                         <h4>> Under Prof. Naveen Aggarwal, DIC-Vision Lab</h4>
                         <h4>>Panjab University</h4>
-                        <p>Computer-Vision based faulty mechanical fastner detection system complete with Hardware and Software running on Raspberry Pi. Sorts 1200 parts per minute</p>
+                        <p>Computer-Vision based faulty mechanical fastener detection system complete with Hardware and Software running on RPi. Sorts 1200 parts per minute</p>
                         <div class="project-tags">
                             <span class="tag">C++</span>
                             <span class="tag">OpenCV</span>
@@ -651,7 +650,7 @@
                         <h3 class="project-title">Women Safety Device</h3>
                         <h4>> Under Dr. Garima Joshi, DIC-Sensors Lab</h4>
                         <h4>>Panjab University</h4>
-                        <p>Part of a team of 4 that created Women Safety Device in DIC-Sensors Lab. Implemented embedded system design, PCB design, and fall detection ML model. The device is under patent consideration.</p>
+                        <p>Part of a team of 4 that created Women Safety Device in DIC-Sensors Lab. Implemented embedded system design, PCB design, and fall detection ML model. The device is under <b>patent</b> consideration.</p>
                         <div class="project-tags">
                             <span class="tag">Embedded C</span>
                             <span class="tag">PCB Design</span>

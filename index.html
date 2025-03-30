@@ -59,6 +59,10 @@
     .mono {
       color: var(--accent-color);
       font-family: 'JetBrains Mono', monospace;
+
+    }
+    .mono{
+      margin-right:5vw;
     }
     
     #matrix-canvas {
@@ -169,6 +173,12 @@
       white-space: nowrap;
       animation: typewriter 2s steps(40, end);
     }
+    @media (max-width: 768px) {
+  .terminal-line {
+    width: 100%; /* Show full width immediately */
+    animation: none; /* Disable animation */
+  }
+}
     
     .prompt {
       color: var(--accent-color);
@@ -515,15 +525,15 @@
         <section id="about" class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Computer Vision Engineer<br>
-                    & <span class="hero-accent">Embedded Systems Developer</span>
+                    Software Developer<br>
+                    & <span class="hero-accent">Embedded Systems Designer</span>
                 </h1>
                 <div class="terminal">
                   <div class="terminal-line">
                       <span class="prompt">$</span> whoami
                   </div>
                   <div class="terminal-line">
-                      → Software Engineer with a focus on AI and Systems Development
+                      → Software Developer with a focus on AI and Systems Development
                   </div>
                   <div class="terminal-line">
                       → Embedded & Machine Learning Enthusiast, bridging hardware and AI
